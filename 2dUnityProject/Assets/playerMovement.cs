@@ -46,7 +46,7 @@ public class playerMovement : MonoBehaviour
             else if (deltaY < 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
             {
                 //down sprite
-                anim.SetFloat("Vertical", movement.y = -1);
+                anim.SetFloat("VerticalIdle", movement.y = -1);
             }
             else
             {
