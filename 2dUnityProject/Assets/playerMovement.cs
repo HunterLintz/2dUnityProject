@@ -1,7 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Add fucking comments
+ * to ur cs files
+ * you absolute madman
+ * so i know what i'm looking at 
+ * and what you were thinking
+ * a lot faster
+ * when i'm alone, going through things for funzies
+ * or wanting to add things, but unsure of what i can and can't change
+ * comments HELP son
+ * add them
+ * unless it's a solo project that'll be done relatively fast...
+ * but on collabs, ALWAYS comment >:C
+ * End of rant
+ */
 public class playerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -46,7 +60,7 @@ public class playerMovement : MonoBehaviour
             else if (deltaY < 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
             {
                 //down sprite
-                anim.SetFloat("VerticalIdle", movement.y = -1);
+                anim.SetFloat("Vertical", movement.y = -1);
             }
             else
             {
