@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SceneObjectsWithCollide
+    uniqueID: 2964526607
+    locked: 0
   - name: fg
     uniqueID: 3401858967
     locked: 0
