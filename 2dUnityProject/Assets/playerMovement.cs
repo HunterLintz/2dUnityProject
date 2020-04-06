@@ -18,6 +18,8 @@ public class playerMovement : MonoBehaviour
 		movement.x = Input.GetAxisRaw("Horizontal");
 		movement.y = Input.GetAxisRaw("Vertical");
 
+		movement = movement.normalized;
+
 		mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
 		float deltaX = mousePos.x - transform.position.x;
