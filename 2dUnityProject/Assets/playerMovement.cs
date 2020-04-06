@@ -48,6 +48,7 @@ public class playerMovement : MonoBehaviour
             if (deltaX > 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
             {
                 //right sprite
+                //movement.x and movement.y are placeholders until we figure out how to change the sprite based on the math in this section
                 anim.SetFloat("Horizontal", movement.x = 1);
             }
             // when mouse is less than 0 along the x axis & closer to x axis than y axis , face left
