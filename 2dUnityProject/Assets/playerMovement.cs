@@ -21,6 +21,8 @@ public class playerMovement : MonoBehaviour
         movement = movement.normalized;
 
         //face mouse direction START
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
         float deltaX = mousePos.x - transform.position.x;
         float deltaY = mousePos.y - transform.position.y;
 
@@ -28,23 +30,23 @@ public class playerMovement : MonoBehaviour
         {
             if (deltaX > 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
             {
-                //right
-                anim.SetInteger("Horizontal", 1);
+                //right sprite
+                anim.SetFloat("Horizontal", movement.x = 1);
             }
             else if (deltaX < 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
             {
-                //left
-                anim.SetInteger("Horizontal", -1);
+                //left sprite
+                anim.SetFloat("Horizontal", movement.x = -1);
             }
             else if (deltaY > 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
             {
-                //up
-                anim.SetInteger("Vertical", 1);
+                //up sprite
+                anim.SetFloat("Vertical", movement.y = 1);
             }
             else if (deltaY < 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
             {
-                //down
-                anim.SetInteger("Vertical", -1);
+                //down sprite
+                anim.SetFloat("Vertical", movement.y = -1);
             }
             else
             {
