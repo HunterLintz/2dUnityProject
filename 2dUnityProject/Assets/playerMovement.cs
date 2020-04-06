@@ -64,10 +64,6 @@ public class playerMovement : MonoBehaviour
 					anim.SetFloat("HorizontalIdle",-1);
 					anim.SetFloat("VerticalIdle", 0);
 				}
-				else
-				{
-				Debug.Log("faceMouseDir Error");
-				}
 				if (deltaY > 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
 				{
 					//up sprite
@@ -83,10 +79,6 @@ public class playerMovement : MonoBehaviour
 					anim.SetFloat("Vertical", -1);								
 					anim.SetFloat("VerticalIdle", -1);
 					anim.SetFloat("HorizontalIdle", 0);
-				}
-				else
-				{
-					Debug.Log("faceMouseDir Error");
 				}
 			}
 		}
