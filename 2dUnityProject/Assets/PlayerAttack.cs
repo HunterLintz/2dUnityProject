@@ -66,7 +66,7 @@ public class PlayerAttack : MonoBehaviour
 			}
 			if (y > 0 && x == 0)
 			{
-				attackLocation.position = new Vector2(rb.position.x, rb.position.y + (float)0.75);
+				attackLocation.position = new Vector2(rb.position.x, rb.position.y + (float)0.25);
 			}
 			if (y < 0 && x == 0)
 			{
