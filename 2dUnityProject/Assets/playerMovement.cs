@@ -42,25 +42,25 @@ public class playerMovement : MonoBehaviour
 
         if (!(deltaX == 0f && deltaY == 0f)) //position directly on cursor
         {
-            // when mouse is greater than 0 along the x axis , face right
+            // when mouse is greater than 0 along the x axis & closer to x axis than y axis , face right
             if (deltaX > 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
             {
                 //right sprite
                 anim.SetFloat("Horizontal", movement.x = 1);
             }
-            // when mouse is less than 0 along the x axis , face left
+            // when mouse is less than 0 along the x axis & closer to x axis than y axis , face left
             else if (deltaX < 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
             {
                 //left sprite
                 anim.SetFloat("Horizontal", movement.x = -1);
             }
-            //when mouse is greater than 0 along the y axis , face up
+            //when mouse is greater than 0 along the y axis & closer to y axis than x axis , face up
             else if (deltaY > 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
             {
                 //up sprite
                 anim.SetFloat("Vertical", movement.y = 1);
             }
-            // when mouse is less than 0 along the y axis , face down
+            // when mouse is less than 0 along the y axis & closer to y axis than x axis , face down
             else if (deltaY < 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
             {
                 //down sprite
