@@ -6,7 +6,7 @@ public class playerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    public Animator animator;
+    public Animator anim;
 
     Vector2 movement;
 
@@ -16,6 +16,8 @@ public class playerMovement : MonoBehaviour
 
 		}
 
+		 public bool isBow = false; 
+
     // Update is called once per frame
     public void Update()
     {
@@ -24,37 +26,107 @@ public class playerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        movement = movement.normalized;
+        float deltaX = mousePos.x - transform.position.x;
+        float deltaY = mousePos.y - transform.position.y;
 
-        if (movement.x != 0)
-        {
-            animator.SetBool("Is_Moving_Side", true);
-        }
-        else
-        {
-            animator.SetBool("Is_Moving_Side", false);
-        }
-
-        if (movement != Vector2.zero)
-        {
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
-            animator.SetFloat("Speed", movement.sqrMagnitude);
-            animator.SetFloat("HorizontalIdle", movement.x);
-            animator.SetFloat("VerticalIdle", movement.y);
-        }
-        else
-        {
-            animator.SetFloat("Horizontal", 0);
-            animator.SetFloat("Vertical", 0);
-            animator.SetFloat("Speed", 0);
-        }  
+				if (isBow == true)
+				{
+					if (Input.GetButtonDown("Fire2") && isBow == true)
+					{
+						isBow = false;
+						anim.SetBool("is_Bow",false);
+						anim.SetFloat("Horizontal", 0);
+						anim.SetFloat("Vertical", 0);
+						anim.SetFloat("Speed", 0);
+						anim.SetFloat("HorizontalIdle", 0);
+						anim.SetFloat("VerticalIdle", 0);
+					}
+					if (!(deltaX == 0f && deltaY == 0f)) //position directly on cursor
+        	{
+						if (movement != Vector2.zero)
+						{
+							anim.SetFloat("Speed", movement.sqrMagnitude);
+						}
+						else
+						{
+							anim.SetFloat("Speed", 0);	
+						}
+            if (deltaX > 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
+            {
+                //right sprite
+								anim.SetFloat("Horizontal", 1);
+								anim.SetFloat("Vertical", 0);
+                anim.SetFloat("HorizontalIdle", 1);
+								anim.SetFloat("VerticalIdle", 0);
+            }
+            else if (deltaX < 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
+            {
+                //left sprite
+								anim.SetFloat("Horizontal", -1);
+								anim.SetFloat("Vertical", 0);								
+                anim.SetFloat("HorizontalIdle",-1);
+								anim.SetFloat("VerticalIdle", 0);
+            }
+						else
+            {
+						Debug.Log("faceMouseDir Error");
+            }
+            if (deltaY > 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
+            {
+                //up sprite
+								anim.SetFloat("Horizontal", 0);
+								anim.SetFloat("Vertical", 1);								
+                anim.SetFloat("VerticalIdle", 1);
+								anim.SetFloat("HorizontalIdle", 0);
+            }
+            else if (deltaY < 0f && Mathf.Abs(deltaY) > Mathf.Abs(deltaX))
+            {
+                //down sprite
+								anim.SetFloat("Horizontal", 0);
+								anim.SetFloat("Vertical", -1);								
+                anim.SetFloat("VerticalIdle", -1);
+								anim.SetFloat("HorizontalIdle", 0);
+            }
+            else
+            {
+                Debug.Log("faceMouseDir Error");
+            }
+					}
+				}
+				else if (isBow == false)
+				{
+					// face mouse direction END
+					if (Input.GetButtonDown("Fire2") && isBow == false)
+					{
+						isBow = true;
+						anim.SetBool("is_Bow",true);						
+						anim.SetFloat("Horizontal", 0);
+						anim.SetFloat("Vertical", 0);
+						anim.SetFloat("Speed", 0);
+						anim.SetFloat("HorizontalIdle", 0);
+						anim.SetFloat("VerticalIdle", 0);
+						
+					}
+					if (movement != Vector2.zero)
+					{
+							anim.SetFloat("Horizontal", movement.x);
+							anim.SetFloat("Vertical", movement.y);
+							anim.SetFloat("Speed", movement.sqrMagnitude);
+							anim.SetFloat("HorizontalIdle", movement.x);
+							anim.SetFloat("VerticalIdle", movement.y);
+					}
+					else
+					{
+							anim.SetFloat("Horizontal", 0);
+							anim.SetFloat("Vertical", 0);
+							anim.SetFloat("Speed", 0);
+					} 					
+				}  
     }
 
     public void FixedUpdate()
     {
         // Movement
-
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 				
     }
