@@ -12,6 +12,8 @@ public class playerMovement : MonoBehaviour
 
 		Vector2 mousePos;
 
+		Camera cam;
+
 		public void Start()
 		{
 			
@@ -27,6 +29,8 @@ public class playerMovement : MonoBehaviour
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+				mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         float deltaX = mousePos.x - transform.position.x;
         float deltaY = mousePos.y - transform.position.y;
