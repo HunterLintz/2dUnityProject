@@ -10,6 +10,8 @@ public class playerMovement : MonoBehaviour
 
     Vector2 movement;
 
+		Vector2 mousePos;
+
 		public void Start()
 		{
 			
