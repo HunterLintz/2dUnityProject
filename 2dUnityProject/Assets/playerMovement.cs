@@ -37,10 +37,12 @@ public class playerMovement : MonoBehaviour
         //face mouse direction START
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
+        // subtracting two vectors to get a vector that points in the direction of the mouse cursor
         float deltaX = mousePos.x - transform.position.x;
         float deltaY = mousePos.y - transform.position.y;
 
-        if (!(deltaX == 0f && deltaY == 0f)) //position directly on cursor
+        //position directly on cursor
+        if (!(deltaX == 0f && deltaY == 0f))
         {
             // when mouse is greater than 0 along the x axis & closer to x axis than y axis , face right
             if (deltaX > 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
@@ -68,11 +70,13 @@ public class playerMovement : MonoBehaviour
             }
             else
             {
+                // debug message when faceMouse script fails
                 Debug.Log("faceMouseDir Error");
             }
         }
         //face mouse direction END
 
+        //if moving along x axis , sprite is moving to the side
         if (movement.x != 0)
         {
             anim.SetBool("Is_Moving_Side", true);
@@ -101,7 +105,7 @@ public class playerMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-        // Movement
+        // Movement normalized across varying framerates
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 				
     }
