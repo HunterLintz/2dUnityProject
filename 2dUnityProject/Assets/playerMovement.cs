@@ -10,8 +10,14 @@ public class playerMovement : MonoBehaviour
 
     Vector2 movement;
 
+		public void Start()
+		{
+			
+
+		}
+
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         // Input
 
@@ -45,7 +51,7 @@ public class playerMovement : MonoBehaviour
         }  
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         // Movement
 
