@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour
         float deltaX = mousePos.x - transform.position.x;
         float deltaY = mousePos.y - transform.position.y;
 
-        if (!(deltaX == 0f && deltaY == 0f))
+        if (!(deltaX == 0f && deltaY == 0f)) //position directly on cursor
         {
             if (deltaX > 0f && Mathf.Abs(deltaX) > Mathf.Abs(deltaY))
             {
