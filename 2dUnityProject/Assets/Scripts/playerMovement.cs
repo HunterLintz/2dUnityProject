@@ -10,7 +10,21 @@ public class playerMovement : MonoBehaviour
 	Vector2 movement;
 	public Vector2 mousePos;
 	public bool isBow = false; 
+	private Material matWhite;
+	private Material matDefault;
+	SpriteRenderer sr;
+	public int health = 100;
 
+	public int lives = 3;
+
+	public void Start()
+	{
+		sr = GetComponent<SpriteRenderer>();
+		matWhite = Resources.Load("WhiteFlash", typeof(Material)) as Material;
+		matDefault = sr.material;
+
+		sr.material = matDefault;
+	}
 	// Update is called once per frame
 	public void Update()
 	{
@@ -112,7 +126,44 @@ public class playerMovement : MonoBehaviour
 			} 					
 		}  
 	}
+	public void TakeDamage(int damage)
+    {
+        sr.material = matWhite;
+        health -= damage;
+        if (health <= 0)
+        {
+            playerDie();
+        }
+        else
+        {
+            Invoke("ResetMaterial", .1f);
+        }
+    }
+    void ResetMaterial()
+    {
+        sr.material = matDefault;
+    }
+    public void playerDie()
+    {
+        lives -= 1;
+        if (lives <= 0)
+        {
 
+            gameOver();
+        }
+        else
+        {
+            health = 100;
+            rb.position = new Vector2(0, 0);
+            Invoke("ResetMaterial", .1f);
+        }
+
+    }
+    public void gameOver()
+    {
+        gameObject.SetActive(false);
+        Invoke("ResetMaterial", .1f);
+    }
 	public void FixedUpdate()
 	{
 			// Movement normalized across varying framerates

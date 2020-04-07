@@ -25,7 +25,7 @@ public class enemyMovementUpDown : MonoBehaviour
 			if (wall == true)
 			{
 				isFront = false;
-				wallCheck.position = new Vector2(rb.position.x, rb.position.y);
+				wallCheck.position = new Vector2(rb.position.x, rb.position.y+ (float)0.5);
 			}
 		}
 		if (isFront == false)
@@ -36,7 +36,7 @@ public class enemyMovementUpDown : MonoBehaviour
 			if (wall == true)
 			{
 				isFront = true;
-				wallCheck.position = new Vector2(rb.position.x, rb.position.y -(float)1.1);
+				wallCheck.position = new Vector2(rb.position.x, rb.position.y -(float)1);
 			}		
 		}
 	}
