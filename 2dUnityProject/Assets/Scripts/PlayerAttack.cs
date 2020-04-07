@@ -18,6 +18,10 @@ public class PlayerAttack : MonoBehaviour
 	private float x;
 	private float y;
 	public GameObject target;
+	public Transform firePoint;
+	public GameObject arrowPrefab;
+	public bool arrowShot = false;
+	public float arrowForce = 20f;
 
 	public void Start()
 	{
@@ -114,15 +118,19 @@ public class PlayerAttack : MonoBehaviour
 			if (attackTime > 0)
 			{
 				attackTime -= Time.deltaTime;
-				if (attackTime <= .33)
+				if (attackTime <= .33 && arrowShot == false)
 				{
-					//AREA FOR ARROW SHOOTING CODE
+					GameObject arrowObject = Instantiate(arrowPrefab, firePoint.position, firePoint.rotation);
+					Rigidbody2D rb = arrowObject.GetComponent<Rigidbody2D>();
+					rb.AddForce(firePoint.up * arrowForce, ForceMode2D.Impulse);
+					arrowShot = true;
 				}
 				//sets attacking bool to false once attack timer is back to zero
 				if (attackTime <= 0)
 				{	
 					attackTime = 0;
-					animator.SetBool("Is_attacking", false);	
+					animator.SetBool("Is_attacking", false);
+					arrowShot = false;	
 				}
 			}
 		}

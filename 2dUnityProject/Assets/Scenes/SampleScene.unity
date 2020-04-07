@@ -4798,6 +4798,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   target: {fileID: 6211228127378229390, guid: b6eb79d9285d8be418d3b6b66cae06f6, type: 3}
+  firePoint: {fileID: 2023703652}
+  arrowPrefab: {fileID: 8900005062252257431, guid: 8f8e7b2ce66a8654f8db58af16682f6f,
+    type: 3}
+  arrowShot: 0
+  arrowForce: 20
 --- !u!58 &1576620433
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4871,8 +4876,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orb: {fileID: 1703864126}
-  isBow: 0
   radius: 1
+  isBow: 1
+  player: {fileID: 0}
 --- !u!1 &2023703651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4882,6 +4888,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2023703652}
+  - component: {fileID: 2023703653}
   m_Layer: 0
   m_Name: bowAttackLocation
   m_TagString: Untagged
@@ -4903,3 +4910,15 @@ Transform:
   m_Father: {fileID: 1703864126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2023703653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023703651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416c1a9fd8520e04bb8118844570e5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
