@@ -8,7 +8,7 @@ public class playerMovement : MonoBehaviour
 	public Camera cam;
 	public Animator anim;
 	Vector2 movement;
-	Vector2 mousePos;
+	public Vector2 mousePos;
 	public bool isBow = false; 
 
 	// Update is called once per frame
