@@ -3725,6 +3725,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &318056311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318056312}
+  m_Layer: 8
+  m_Name: wallDetect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &318056312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318056311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1074538490}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337686136
 GameObject:
   m_ObjectHideFlags: 0
@@ -4108,9 +4138,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1074538490}
   - component: {fileID: 1074538489}
+  - component: {fileID: 1074538493}
   - component: {fileID: 1074538488}
   - component: {fileID: 1074538487}
   - component: {fileID: 1074538491}
+  - component: {fileID: 1074538492}
   m_Layer: 8
   m_Name: Treant
   m_TagString: Untagged
@@ -4144,7 +4176,7 @@ Animator:
   m_GameObject: {fileID: 1074538486}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c28df043fcd9d194a8aa498f2b71bb34, type: 2}
+  m_Controller: {fileID: 9100000, guid: afb048b479ea83846a2a0d105eb718ab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4212,7 +4244,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.17, y: 1.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 318056312}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4228,6 +4261,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6753b32890eeacd4ab36ede416c7aad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1074538492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074538486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e303a2b6f37438428c02abc06b0c3f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  isfront: 1
+  wallCheck: {fileID: 0}
+--- !u!50 &1074538493
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074538486}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1364171809
 GameObject:
   m_ObjectHideFlags: 0
