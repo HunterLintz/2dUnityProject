@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - enemies
-  - 
+  - walls
   - 
   - 
   - 
@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SceneObjectsWithCollide
+    uniqueID: 2964526607
+    locked: 0
   - name: fg
     uniqueID: 3401858967
+    locked: 0
+  - name: Target
+    uniqueID: 3504136123
+    locked: 0
+  - name: fx
+    uniqueID: 1583405145
     locked: 0
