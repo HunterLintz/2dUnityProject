@@ -132,7 +132,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: attack 0
+  m_Name: bowAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -416,7 +416,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5af8891fdc4d6224097ac238019c4d1c, type: 2}
+    m_Motion: {fileID: 7400000, guid: 3e074201635da174d8ea56939afc44fc, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -424,7 +424,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 47e5bccb9296c244792099af4e012e10, type: 2}
+    m_Motion: {fileID: 7400000, guid: 4e9ed58b3f99f824fa1fe7ed74a744eb, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -432,7 +432,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6179516b62a79b34ead1277b27f55dfe, type: 2}
+    m_Motion: {fileID: 7400000, guid: 40ec11d08c85d0a49a6d865d0f3afd82, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -440,7 +440,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 9366a409ffc1a9840a9667cb3a30ae4a, type: 2}
+    m_Motion: {fileID: 7400000, guid: a05edb762ae9c1a4c92eac54d0a18e2d, type: 2}
     m_Threshold: 0
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -508,7 +508,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle 1
+  m_Name: bowIdle
   m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
@@ -537,7 +537,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Movement
+  m_Name: meleeMovement
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -958,7 +958,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: meleeIdle
   m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
@@ -987,7 +987,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Movement 1
+  m_Name: bowMovement
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1288,7 +1288,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: attack
+  m_Name: meleeAttack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
